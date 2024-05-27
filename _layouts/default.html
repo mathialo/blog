@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <meta name="description" content="Rambling about software, math, music or whatever I find interesting at the moment">
+    <meta property="og:description" content="Rambling about software, math, music or whatever I find interesting at the moment" />
+
+    <meta name="author" content="foss@mathiaslohne.com" />
+
+    <meta property="og:title" content="Mathias Lohne" />
+    <meta property="twitter:title" content="Mathias Lohne" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.baseurl }}/feed.xml" />
+
+    <script type="text/javascript" src="https://mathialo.github.io/imagezoom.js/js/imagezoom.js"></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function(event) {
+        imgzm.applyToClass("zoomable");
+      });
+    </script>
+
+    {% include analytics.html %}
+
+    <!-- Based on Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <p class="site-description">{{ site.description }}</p>
+          </div>
+
+          <nav>
+            <a href="{{ site.baseurl }}/about">About</a>
+            <!-- <a href="{{ site.baseurl }}/valg-2025">Valg 2025</a>  -->
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      {{ content }}
+    </div>
+
+    <div class="container" style="flex: 1; height: 100%;"> </div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <p><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" class="cclogo" /><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" class="cclogo" /> Every blog post is released as CC-BY 4.0. <br />Any code snippet is published under the MIT license unless otherwise stated.</p>
+
+          {% include svg-icons.html %}
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

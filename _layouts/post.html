@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article class="post">
+  <h1>{{ page.title }}</h1>
+
+  <div class="date">
+    {% assign m = page.date | date: "%-m" %}
+    {{ page.date | date: "%-d" }}.
+    {% case m %}
+      {% when '1' %}January
+      {% when '2' %}February
+      {% when '3' %}March
+      {% when '4' %}April
+      {% when '5' %}May
+      {% when '6' %}June
+      {% when '7' %}July
+      {% when '8' %}August
+      {% when '9' %}September
+      {% when '10' %}October
+      {% when '11' %}November
+      {% when '12' %}December
+    {% endcase %}
+    {{ page.date | date: "%Y" }}
+  </div>
+
+  <div class="entry">
+    {{ content }}
+  </div>
+
+  <div class="PageNavigation">
+    {% if page.previous.url %}
+      <a class="LeftPage" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="RightPage" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+    {% endif %}
+  </div>
+</article>
